@@ -1,0 +1,53 @@
+.lista-clientes {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    border-collapse: collapse;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lista-clientes th,
+.lista-clientes td {
+    border: 1px solid #eee;
+    padding: 12px;
+}
+
+.lista-clientes th {
+    background-color: #343837;
+    color: #fff;
+    font-weight: bold;
+}
+
+.lista-clientes tr:nth-child(even) {
+    background-color: #fafafa;
+    transition: background-color 0.8s ease;
+}
+
+.lista-clientes tr:hover {
+    background-color: #7a7c7c;
+    color: #fff;
+}
+
+.lista-clientes tbody tr {
+    transition: transform 0.3s ease;
+}
+
+.lista-clientes tbody tr:hover {
+    transform: translateY(2px);
+}
+
+.botao-editar,
+.botao-excluir {
+    background-color: transparent; /* Botões transparentes */
+    border: none; /* Remover borda */
+    cursor: pointer; /* Cursor ao passar o mouse */
+    transition: color 0.3s ease; /* Transição suave da cor do ícone */
+    display: inline-block; /* Exibir os botões em linha */
+    vertical-align: middle; /* Alinhar verticalmente */
+    margin-right: 8px; /* Espaçamento entre os botões */
+}
+
+.botao-editar mat-icon,
+.botao-excluir mat-icon {
+    vertical-align: middle; /* Alinhar verticalmente o ícone */
+}
