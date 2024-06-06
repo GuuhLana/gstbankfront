@@ -4,7 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
-  { path: 'clientes', component: ClienteComponent }
+  { path: '', component: ClienteComponent },
+  { path: 'lista-clientes', component: ClienteComponent }
 ];
 
 @NgModule({

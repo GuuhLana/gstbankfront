@@ -2,6 +2,9 @@ import { Cliente } from './../../interfaces/Cliente';
 import { ClienteService } from './../../services/cliente.service';
 import { Component, OnInit } from '@angular/core';
 
+import { ConfirmDialogComponent } from './../../confirm-dialog/confirm-dialog.component';
+
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 
 @Component({
@@ -13,7 +16,7 @@ export class ClienteComponent implements OnInit {
 
   clientes: Cliente[] = [];
 
-  constructor(private clienteService : ClienteService) { }
+  constructor(private clienteService : ClienteService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getClientes();
@@ -21,7 +24,7 @@ export class ClienteComponent implements OnInit {
 
   // Método para buscar a lista de clientes do serviço
   getClientes() {
-    this.clienteService.getListaClientes()
+    this.clienteService.recuperaListaClientes()
       .subscribe(clientes => this.clientes = clientes);
   }
 
@@ -30,8 +33,33 @@ export class ClienteComponent implements OnInit {
     // Aqui você pode implementar a lógica para editar o cliente
 }
 
-excluirCliente(cliente: Cliente) {
-    console.log('Cliente para exclusão:', cliente);
-    // Aqui você pode implementar a lógica para excluir o cliente
-}
+  openConfirmDialog(cliente: Cliente){
+    const dialogRef = this.dialog.open(ConfirmDialogComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.deleteAccount(cliente);
+        this.reloadPage();
+      }
+    });
+  }
+
+  openCadastroDialog() {
+    const dialogRef = this.dialog.open(CadastroDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.loadClientes();
+        this.reloadPage();
+      }
+    });
+  }
+
+  deleteAccount(cliente: Cliente) {
+    this.clienteService.deletaCliente(cliente.id).subscribe(
+    );
+  }
+
+  reloadPage() {
+    location.reload();
+  }
 }

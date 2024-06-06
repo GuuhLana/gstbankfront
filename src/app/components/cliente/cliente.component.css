@@ -4,12 +4,14 @@
     font-size: 20px;
     border-collapse: collapse;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
 .lista-clientes th,
 .lista-clientes td {
     border: 1px solid #eee;
     padding: 12px;
+    text-align: left;
 }
 
 .lista-clientes th {
@@ -24,7 +26,7 @@
 }
 
 .lista-clientes tr:hover {
-    background-color: #7a7c7c;
+    background-color: #656867;
     color: #fff;
 }
 
@@ -36,18 +38,44 @@
     transform: translateY(2px);
 }
 
-.botao-editar,
-.botao-excluir {
-    background-color: transparent; /* Botões transparentes */
-    border: none; /* Remover borda */
-    cursor: pointer; /* Cursor ao passar o mouse */
-    transition: color 0.3s ease; /* Transição suave da cor do ícone */
-    display: inline-block; /* Exibir os botões em linha */
-    vertical-align: middle; /* Alinhar verticalmente */
-    margin-right: 8px; /* Espaçamento entre os botões */
+.actions-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
 }
 
-.botao-editar mat-icon,
-.botao-excluir mat-icon {
-    vertical-align: middle; /* Alinhar verticalmente o ícone */
+.actions-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao-excluir {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.botao-cadastrar {
+    background-color: #343837;
+    margin-right: 2rem;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.botao-cadastrar mat-icon {
+    margin-right: 8px;
+}
+
+.botao-cadastrar:hover {
+    background-color: #656867;
 }

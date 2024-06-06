@@ -2,6 +2,12 @@
 
 <h2>Lista de Clientes</h2>
 
+<div class="actions-header">
+    <button (click)="openCadastroDialog()" class="botao-cadastrar">
+        <mat-icon>add</mat-icon> Cadastrar Nova Conta
+    </button>
+</div>
+
 <table class="lista-clientes">
     <thead>
         <tr>
@@ -20,11 +26,8 @@
             <td>{{ cliente.numero }}</td>
             <td>{{ cliente.agencia }}</td>
             <td>{{ cliente.saldo | currency:'BRL':'symbol':'1.2-2' }}</td>
-            <td>
-                <button (click)="editarCliente(cliente)" class="botao-editar">
-                    <mat-icon>edit</mat-icon>
-                </button>
-                <button (click)="excluirCliente(cliente)" class="botao-excluir">
+            <td class="actions-column">
+                <button (click)="openConfirmDialog(cliente)" class="botao-excluir">
                     <mat-icon>delete</mat-icon>
                 </button>
             </td>
