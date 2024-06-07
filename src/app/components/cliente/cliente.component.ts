@@ -3,6 +3,8 @@ import { ClienteService } from './../../services/cliente.service';
 import { Component, OnInit } from '@angular/core';
 
 import { ConfirmDialogComponent } from './../../confirm-dialog/confirm-dialog.component';
+import { CadastroDialogComponent } from './../../cadastro-dialog/cadastro-dialog.component';
+
 
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
@@ -48,7 +50,7 @@ export class ClienteComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.loadClientes();
+        this.getClientes();
         this.reloadPage();
       }
     });

@@ -26,7 +26,7 @@ export class ClienteService {
   }
 
   cadastrarConta(conta: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/cadastrar`, conta);
+    return this.httpClient.post(`${this.createUrl}/`, conta);
   }
 
   private handleError(error: HttpErrorResponse) {

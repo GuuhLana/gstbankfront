@@ -1,39 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 .mat-dialog-container {
     padding: 24px;
     max-width: 600px;
     width: 100%;
-  }
-  
-  h1 {
+    border-radius: 8px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff; 
+}
+
+h1 {
     font-size: 24px;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     text-align: center;
-  }
-  
-  mat-form-field {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+mat-form-field {
     width: 100%;
-    margin-bottom: 16px;
-  }
-  
-  button {
+    margin-bottom: 24px;
+}
+
+.mat-form-field .mat-form-field-label {
+    font-weight: 500;
+}
+
+.mat-form-field .mat-form-field-underline {
+    background-color: #343837;
+}
+
+.mat-form-field .mat-form-field-underline.mat-focused {
+    background-color: #67c067;
+}
+
+button {
     margin: 8px;
-  }
-  
-  button[mat-button] {
-    background-color: #1976d2;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+button[mat-button] {
+    background-color: #28a745;
     color: white;
-  }
-  
-  button[mat-button]:hover {
-    background-color: #155a9c;
-  }
-  
-  button[mat-button].cancel-button {
-    background-color: #e0e0e0;
-    color: black;
-  }
-  
-  button[mat-button].cancel-button:hover {
-    background-color: #aeaeae;
-  }
-  
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button[mat-button]:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+button[mat-button].cancel-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+button[mat-button].cancel-button:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+.mat-dialog-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.spacer {
+  flex: 1;
+}

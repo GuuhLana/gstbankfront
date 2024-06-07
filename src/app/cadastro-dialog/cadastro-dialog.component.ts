@@ -1,7 +1,7 @@
+import { ClienteService } from './../services/cliente.service';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { MatDialogRef } from '@angular/material/dialog';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ContaService } from '../conta.service';
 
 @Component({
   selector: 'app-cadastro-dialog',
@@ -10,11 +10,15 @@ import { ContaService } from '../conta.service';
 })
 export class CadastroDialogComponent implements OnInit {
 
-  cconstructor(
-    private dialogRef: MatDialogRef<CadastroDialogComponent>,
+  cadastroForm!: FormGroup;
+
+  constructor(
+    public dialogRef: MatDialogRef<CadastroDialogComponent>,
     private fb: FormBuilder,
-    private contaService: ContaService
-  ) {
+    private clienteService: ClienteService
+  ) {}
+
+  ngOnInit(): void {
     this.cadastroForm = this.fb.group({
       titular: ['', Validators.required],
       numero: ['', Validators.required],
@@ -23,20 +27,20 @@ export class CadastroDialogComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  onSubmit(): void {
     if (this.cadastroForm.valid) {
-      this.contaService.cadastrarConta(this.cadastroForm.value).subscribe(
+      this.clienteService.cadastrarConta(this.cadastroForm.value).subscribe(
         response => {
           this.dialogRef.close(response);
         },
         error => {
-          console.error('Erro ao cadastrar a conta', error);
+          console.error('Erro ao cadastrar conta:', error);
         }
       );
     }
   }
 
-  onCancel() {
+  onClose(): void {
     this.dialogRef.close();
   }
 }
