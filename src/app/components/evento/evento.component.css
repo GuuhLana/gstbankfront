@@ -15,7 +15,14 @@ h2 {
     margin-top: 1rem;
 }
 
-.lista-clientes {
+.actions-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    padding-right: 1rem;
+}
+
+.lista-eventos {
     width: 100%;
     font-size: 18px;
     border-collapse: collapse;
@@ -26,70 +33,38 @@ h2 {
     overflow: hidden;
 }
 
-.lista-clientes th,
-.lista-clientes td {
+.lista-eventos th,
+.lista-eventos td {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: left;
 }
 
-.lista-clientes th {
+.lista-eventos th {
     background-color: #343837;
     color: #fff;
     font-weight: 500;
 }
 
-.lista-clientes tr:nth-child(even) {
+.lista-eventos tr:nth-child(even) {
     background-color: #f9f9f9;
     transition: background-color 0.8s ease;
 }
 
-.lista-clientes tr:hover {
+.lista-eventos tr:hover {
     background-color: #6c757d;
     color: #fff;
 }
 
-.lista-clientes tbody tr {
+.lista-eventos tbody tr {
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.lista-clientes tbody tr:hover {
+.lista-eventos tbody tr:hover {
     transform: translateY(2px);
 }
 
-.actions-header {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 10px;
-    padding-right: 1rem;
-}
-
-.actions-column {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.botao-excluir {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    color: #dc3545;
-    transition: color 0.3s ease, transform 0.3s ease;
-    display: flex;
-    align-items: center;
-}
-
-.botao-excluir mat-icon {
-    font-size: 24px;
-}
-
-.botao-excluir:hover {
-    color: #a71d2a;
-    transform: scale(1.1);
-}
-
-.botao-cadastrar {
+.botao-voltar {
     background-color: #28a745;
     margin-right: 2rem;
     color: white;
@@ -104,35 +79,11 @@ h2 {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.botao-cadastrar mat-icon {
+.botao-voltar mat-icon {
     margin-right: 8px;
 }
 
-.botao-cadastrar:hover {
+.botao-voltar:hover {
     background-color: #218838;
-    transform: scale(1.05);
-}
-
-.botao-eventos {
-    background-color: #1a56c5;
-    margin-right: 2rem;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.botao-eventos mat-icon {
-    margin-right: 8px;
-}
-
-.botao-eventos:hover {
-    background-color: #4f84e7;
     transform: scale(1.05);
 }

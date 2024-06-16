@@ -17,13 +17,17 @@ import { ClienteComponent } from './components/cliente/cliente.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CadastroDialogComponent } from './cadastro-dialog/cadastro-dialog.component';
+import { EventoComponent } from './components/evento/evento.component';
+import { FormatDatePipe } from './pipes/format-date.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClienteComponent,
     ConfirmDialogComponent,
-    CadastroDialogComponent
+    CadastroDialogComponent,
+    EventoComponent,
+    FormatDatePipe
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,28 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<h2>LISTA DE EVENTOS REGISTRADOS</h2>
+
+
+<div class="actions-header">
+    <button (click)="voltar()" class="botao-voltar">
+        <mat-icon>arrow_back</mat-icon> Voltar
+    </button>
+</div>
+
+<table class="lista-eventos">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Mensagem</th>
+            <th>Horário</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let evento of eventos">
+            <td>{{ evento.id }}</td>
+            <td>{{ evento.message }}</td>
+            <td>{{ evento.horarioEvento | formatDate }}</td>
+        </tr>
+    </tbody>
+</table>
