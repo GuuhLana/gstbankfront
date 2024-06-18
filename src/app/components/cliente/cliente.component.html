@@ -5,10 +5,10 @@
 
 <div class="actions-header">
     <button (click)="openListaEventos()" class="botao-eventos">
-        <mat-icon>event_list</mat-icon> Eventos
+        <mat-icon>event_list</mat-icon> Lista de Eventos
     </button>
     <button (click)="openCadastroDialog()" class="botao-cadastrar">
-        <mat-icon>add</mat-icon> Cadastrar Nova Conta
+        <mat-icon>add</mat-icon> Nova conta
     </button>
 </div>
 
@@ -18,18 +18,18 @@
             <th>ID</th>
             <th>Agência</th>
             <th>Número</th>
-            <th>Titular</th>
+            <th class="center">Titular</th>
             <th>Saldo R$</th>
-            <th>Ações</th>
+            <th class="center">Ações</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let cliente of clientes">
-            <td>{{ cliente.id }}</td>
-            <td>{{ cliente.agencia }}</td>
-            <td>{{ cliente.numero }}</td>
-            <td>{{ cliente.titular }}</td>
-            <td>{{ cliente.saldo | currency:'BRL':'symbol':'1.2-2' }}</td>
+            <td class="right">{{ cliente.id }}</td>
+            <td class="right">{{ cliente.agencia }}</td>
+            <td class="right">{{ cliente.numero }}</td>
+            <td class="center">{{ cliente.titular }}</td>
+            <td class="right">{{ cliente.saldo | currency:'BRL':'symbol':'1.2-2' }}</td>
             <td class="actions-column">
                 <button (click)="openConfirmDialog(cliente)" class="botao-excluir">
                     <mat-icon>delete</mat-icon>

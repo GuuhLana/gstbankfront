@@ -30,13 +30,25 @@ h2 {
 .lista-clientes td {
     border: 1px solid #ddd;
     padding: 12px;
-    text-align: left;
 }
 
 .lista-clientes th {
+    text-align: right;
     background-color: #343837;
     color: #fff;
     font-weight: 500;
+}
+
+.lista-clientes .right {
+    text-align: right;
+}
+
+.lista-clientes .center {
+    text-align: center;
+}
+
+.lista-clientes .left {
+    text-align: left;
 }
 
 .lista-clientes tr:nth-child(even) {
