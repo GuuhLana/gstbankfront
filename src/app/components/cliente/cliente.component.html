@@ -1,40 +1,41 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<div class="container">
+    <h1 class="title">Lista de Contas Cadastradas</h1>
 
-<h2>LISTA DE CONTAS CADASTRADAS</h2>
+    <div class="button-container">
+        <button mat-raised-button class="btn" (click)="openListaEventos()">
+            <mat-icon>event_list</mat-icon>
+            Lista de Eventos
+        </button>
+        <button mat-raised-button class="btn" (click)="openCadastro()">
+            <mat-icon>add</mat-icon>
+            Nova Conta
+        </button>
+    </div>
 
-<div class="actions-header">
-    <button (click)="openListaEventos()" class="botao-eventos">
-        <mat-icon>event_list</mat-icon> Lista de Eventos
-    </button>
-    <button (click)="openCadastroDialog()" class="botao-cadastrar">
-        <mat-icon>add</mat-icon> Nova conta
-    </button>
+    <table class="lista-clientes mat-elevation-z8">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Agência</th>
+                <th>Número</th>
+                <th class="center">Titular</th>
+                <th>Saldo R$</th>
+                <th class="center">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cliente of clientes">
+                <td class="right">{{ cliente.id }}</td>
+                <td class="right">{{ cliente.agencia }}</td>
+                <td class="right">{{ cliente.numero }}</td>
+                <td class="center">{{ cliente.titular }}</td>
+                <td class="right">{{ cliente.saldo | currency:'BRL':'symbol':'1.2-2' }}</td>
+                <td class="actions-column">
+                    <button mat-icon-button color="warn" (click)="openConfirmDialog(cliente)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-
-<table class="lista-clientes">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Agência</th>
-            <th>Número</th>
-            <th class="center">Titular</th>
-            <th>Saldo R$</th>
-            <th class="center">Ações</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let cliente of clientes">
-            <td class="right">{{ cliente.id }}</td>
-            <td class="right">{{ cliente.agencia }}</td>
-            <td class="right">{{ cliente.numero }}</td>
-            <td class="center">{{ cliente.titular }}</td>
-            <td class="right">{{ cliente.saldo | currency:'BRL':'symbol':'1.2-2' }}</td>
-            <td class="actions-column">
-                <button (click)="openConfirmDialog(cliente)" class="botao-excluir">
-                    <mat-icon>delete</mat-icon>
-                </button>
-            </td>
-        </tr>
-    </tbody>
-</table>

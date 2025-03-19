@@ -1,33 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-
-body {
-    font-family: 'Roboto', sans-serif;
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
     background-color: #f5f5f5;
-    color: #333;
-    margin: 0;
-    padding: 0;
 }
 
-h2 {
-    padding-left: 1rem;
-    color: #343837;
-    font-weight: 700;
-    margin-top: 1rem;
+.title {
+    font-size: 2rem;
+    color: #FF8C00;
+    margin-bottom: 2rem;
 }
 
-.actions-header {
+.button-container {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 10px;
-    padding-right: 1rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    background-color: #FF8C00;
+    color: white;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn mat-icon {
+    margin-right: 0.5rem;
 }
 
 .lista-eventos {
     width: 100%;
-    font-size: 18px;
+    max-width: 1200px;
+    font-size: 16px;
     border-collapse: collapse;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 1rem;
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
@@ -41,49 +58,15 @@ h2 {
 }
 
 .lista-eventos th {
-    background-color: #343837;
+    background-color: #FF8C00;
     color: #fff;
     font-weight: 500;
 }
 
 .lista-eventos tr:nth-child(even) {
     background-color: #f9f9f9;
-    transition: background-color 0.8s ease;
 }
 
 .lista-eventos tr:hover {
-    background-color: #6c757d;
-    color: #fff;
-}
-
-.lista-eventos tbody tr {
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.lista-eventos tbody tr:hover {
-    transform: translateY(2px);
-}
-
-.botao-voltar {
-    background-color: #28a745;
-    margin-right: 2rem;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.botao-voltar mat-icon {
-    margin-right: 8px;
-}
-
-.botao-voltar:hover {
-    background-color: #218838;
-    transform: scale(1.05);
+    background-color: #e0e0e0;
 }

@@ -41,15 +41,8 @@ export class ClienteComponent implements OnInit {
     });
   }
 
-  openCadastroDialog() {
-    const dialogRef = this.dialog.open(CadastroDialogComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.getClientes();
-        this.reloadPage();
-      }
-    });
+  openCadastro() {
+    this.router.navigate(['/cadastro-conta']);
   }
 
   deleteAccount(cliente: Cliente) {
