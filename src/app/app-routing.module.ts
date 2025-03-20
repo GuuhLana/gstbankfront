@@ -1,3 +1,4 @@
+import { TransferenciaComponent } from './components/transferencia/transferencia.component';
 import { CadastroContaComponent } from './components/cadastro-conta/cadastro-conta.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { EventoComponent } from './components/evento/evento.component';
@@ -8,9 +9,11 @@ import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
   { path: '', component: MenuComponent },
+  { path: 'menu', component: MenuComponent },
   { path: 'lista-clientes', component: ClienteComponent },
   { path: 'lista-eventos', component: EventoComponent },
   { path: 'cadastro-conta', component: CadastroContaComponent },
+  { path: 'transferencia', component: TransferenciaComponent },
 
 ];
 

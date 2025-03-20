@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CadastroDialogComponent } from './cadastro-dialog.component';
+import { TransferenciaComponent } from './transferencia.component';
 
-describe('CadastroDialogComponent', () => {
-  let component: CadastroDialogComponent;
-  let fixture: ComponentFixture<CadastroDialogComponent>;
+describe('TransferenciaComponent', () => {
+  let component: TransferenciaComponent;
+  let fixture: ComponentFixture<TransferenciaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CadastroDialogComponent ]
+      declarations: [ TransferenciaComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CadastroDialogComponent);
+    fixture = TestBed.createComponent(TransferenciaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

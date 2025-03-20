@@ -18,21 +18,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClienteComponent } from './components/cliente/cliente.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
-import { CadastroDialogComponent } from './cadastro-dialog/cadastro-dialog.component';
 import { EventoComponent } from './components/evento/evento.component';
 import { FormatDatePipe } from './pipes/format-date.pipe';
 import { MenuComponent } from './components/menu/menu.component';
+import { TransferenciaComponent } from './components/transferencia/transferencia.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClienteComponent,
     ConfirmDialogComponent,
-    CadastroDialogComponent,
     CadastroContaComponent,
     EventoComponent,
     FormatDatePipe,
     MenuComponent,
+    TransferenciaComponent,
   ],
   imports: [
     BrowserModule,

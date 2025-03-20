@@ -4,8 +4,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ConfirmDialogComponent } from './../../confirm-dialog/confirm-dialog.component';
-import { CadastroDialogComponent } from './../../cadastro-dialog/cadastro-dialog.component';
-
 
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
@@ -15,7 +13,7 @@ import { MatTableModule } from '@angular/material/table';
   templateUrl: './cliente.component.html',
   styleUrls: ['./cliente.component.css']
 })  
-export class ClienteComponent implements OnInit { 
+export class ClienteComponent implements OnInit {
 
   clientes: Cliente[] = [];
 
@@ -25,10 +23,10 @@ export class ClienteComponent implements OnInit {
     this.getClientes();
   }
 
-  // Método para buscar a lista de clientes do serviço
   getClientes() {
-    this.clienteService.recuperaListaClientes()
-      .subscribe(clientes => this.clientes = clientes);
+    this.clienteService.recuperaListaClientes().subscribe((clientes) => {
+      this.clientes = clientes.sort((a, b) => a.id - b.id);
+    });
   }
 
   openConfirmDialog(cliente: Cliente){
@@ -43,6 +41,14 @@ export class ClienteComponent implements OnInit {
 
   openCadastro() {
     this.router.navigate(['/cadastro-conta']);
+  }
+
+  openMenu() {
+    this.router.navigate(['/menu']);
+    }
+
+  openTransferencia() {
+    this.router.navigate(['/transferencia']);
   }
 
   deleteAccount(cliente: Cliente) {

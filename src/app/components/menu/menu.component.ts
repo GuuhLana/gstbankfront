@@ -21,7 +21,10 @@ export class MenuComponent  {
       this.router.navigate(['/lista-eventos']);
     }
     if (option == 'Transferência') {
-      this.router.navigate(['']);
+      this.router.navigate(['/transferencia']);
+    }
+    if (option == 'Cadastrar') {
+      this.router.navigate(['/cadastro-conta']);
     }
     if (option == 'Extrato') {
       this.router.navigate(['']);

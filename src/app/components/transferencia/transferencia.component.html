@@ -1,0 +1,42 @@
+<div class="container">
+    <h1 class="title">Transferência entre Contas</h1>
+
+    <form [formGroup]="transferenciaForm" (ngSubmit)="onSubmit()" class="form-container">
+        <div class="form-group">
+            <label for="contaOrigemAgencia">Agência da Conta de Origem</label>
+            <input id="contaOrigemAgencia" type="number" formControlName="contaOrigemAgencia"
+                placeholder="Digite a agência da conta de origem" required />
+        </div>
+
+        <div class="form-group">
+            <label for="contaOrigemNumero">Número da Conta de Origem</label>
+            <input id="contaOrigemNumero" type="number" formControlName="contaOrigemNumero"
+                placeholder="Digite o número da conta de origem" required />
+        </div>
+
+        <div class="form-group">
+            <label for="contaDestinoAgencia">Agência da Conta de Destino</label>
+            <input id="contaDestinoAgencia" type="number" formControlName="contaDestinoAgencia"
+                placeholder="Digite a agência da conta de destino" required />
+        </div>
+
+        <div class="form-group">
+            <label for="contaDestinoNumero">Número da Conta de Destino</label>
+            <input id="contaDestinoNumero" type="number" formControlName="contaDestinoNumero"
+                placeholder="Digite o número da conta de destino" required />
+        </div>
+
+        <div class="form-group">
+            <label for="valor">Valor da Transferência</label>
+            <input id="valor" type="number" formControlName="valor" placeholder="Digite o valor da transferência"
+                required step="0.01" />
+        </div>
+
+        <div class="button-container">
+            <button type="button" (click)="onCancel()" class="btn cancel-button">
+                Cancelar
+            </button>
+            <button type="submit" class="btn">Transferir</button>
+        </div>
+    </form>
+</div>

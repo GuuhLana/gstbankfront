@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClienteService } from '../../services/cliente.service';
@@ -30,9 +31,25 @@ export class CadastroContaComponent implements OnInit {
     if (this.cadastroForm.valid) {
       this.clienteService.cadastrarConta(this.cadastroForm.value).subscribe(
         (response) => {
-          this.router.navigate(['/lista-clientes']);
+          Swal.fire({
+            icon: 'success',
+            title: 'Tudo certo!',
+            text: 'A conta foi cadastrada com sucesso.',
+            confirmButtonText: 'Continuar',
+            confirmButtonColor: '#FF8C00',
+          }).then((result) => {
+            if (result.isConfirmed) {
+              this.router.navigate(['/lista-clientes']);
+            }
+          });
         },
         (error) => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Erro',
+            text: 'Erro ao cadastrar conta: ' + (error.error || 'Erro desconhecido'),
+            confirmButtonText: 'OK',
+          });
           console.error('Erro ao cadastrar conta:', error);
         }
       );

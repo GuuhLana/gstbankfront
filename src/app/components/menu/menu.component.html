@@ -1,17 +1,21 @@
 <div class="container">
     <h1 class="title">Banco GSTBANK</h1>
     <div class="button-container">
+        <button mat-raised-button class="btn" (click)="onButtonClick('Cadastrar')">
+            <mat-icon>add</mat-icon>
+            Nova conta
+        </button>
         <button mat-raised-button class="btn" (click)="onButtonClick('Listar-Contas')">
             <mat-icon>account_balance_wallet</mat-icon>
-            Listar contas
-        </button>
-        <button mat-raised-button class="btn" (click)="onButtonClick('Listar-Eventos')">
-            <mat-icon>swap_horiz</mat-icon>
-            Listar Eventos
+            Contas
         </button>
         <button mat-raised-button class="btn" (click)="onButtonClick('Transferência')">
-            <mat-icon>payment</mat-icon>
+            <mat-icon>swap_horiz</mat-icon>
             Transferência
+        </button>
+        <button mat-raised-button class="btn" (click)="onButtonClick('Listar-Eventos')">
+            <mat-icon>list</mat-icon>
+            Eventos
         </button>
         <button mat-raised-button class="btn" (click)="onButtonClick('Extrato')">
             <mat-icon>receipt</mat-icon>

@@ -19,12 +19,13 @@ export class EventoComponent implements OnInit {
   }
 
   getEventos(){
-    this.eventoService.recuperaListaEventos()
-    .subscribe(eventos => this.eventos = eventos);
+    this.eventoService.recuperaListaEventos().subscribe(eventos => {
+      this.eventos = eventos.sort((a, b) => b.id - a.id);
+  });
   }
 
   voltar(){
-    this.router.navigate(['/lista-clientes']);
+    this.router.navigate(['/menu']);
   }
 
 }

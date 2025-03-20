@@ -11,6 +11,7 @@ export class ClienteService {
   private clienteUrl = "http://localhost:8080/api/conta"
   private deleteUrl = "http://localhost:8080/api/conta/deletar"
   private createUrl = "http://localhost:8080/api/conta/cadastrar"
+  private transferirUrl = "http://localhost:8080/api/conta/transferir"
 
   constructor( private httpClient: HttpClient ) { }
 
@@ -27,6 +28,10 @@ export class ClienteService {
 
   cadastrarConta(conta: any): Observable<any> {
     return this.httpClient.post(`${this.createUrl}`, conta);
+  }
+
+  transferir(transferenciaData: any): Observable<any> {
+    return this.httpClient.post(`${this.transferirUrl}`, transferenciaData);
   }
 
   private handleError(error: HttpErrorResponse) {
