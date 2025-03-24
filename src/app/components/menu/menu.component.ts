@@ -26,9 +26,9 @@ export class MenuComponent  {
     if (option == 'Cadastrar') {
       this.router.navigate(['/cadastro-conta']);
     }
-    if (option == 'Extrato') {
-      this.router.navigate(['']);
-    }
+    // if (option == 'Extrato') {
+    //   this.router.navigate(['']);
+    // }
   }
 
 }

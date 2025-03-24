@@ -53,6 +53,6 @@ export class TransferenciaComponent implements OnInit {
   }
 
   onCancel(): void {
-    this.router.navigate(['/lista-clientes']); // Volta para a lista sem realizar a transferência
+    this.router.navigate(['/menu']);
   }
 }

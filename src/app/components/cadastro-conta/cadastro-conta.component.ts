@@ -57,6 +57,6 @@ export class CadastroContaComponent implements OnInit {
   }
 
   onCancel(): void {
-    this.router.navigate(['/lista-clientes']);
+    this.router.navigate(['/menu']);
   }
 }
