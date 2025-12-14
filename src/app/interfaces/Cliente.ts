@@ -4,4 +4,6 @@ export interface Cliente {
     numero: number;
     agencia: number;
     saldo: number;
+    cpf: number;
+    tipo: string;
 }

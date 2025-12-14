@@ -2,6 +2,7 @@ import { CadastroContaComponent } from './components/cadastro-conta/cadastro-con
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
@@ -41,6 +42,7 @@ import { TransferenciaComponent } from './components/transferencia/transferencia
     HttpClientModule,
     MatToolbarModule,
     MatTableModule,
+    MatPaginatorModule,
     MatIconModule,
     MatInputModule,
     MatDialogModule,
